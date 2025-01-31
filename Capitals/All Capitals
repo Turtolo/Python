@@ -1,0 +1,165 @@
+# List of European capitals
+europe_capitals = [
+    "Amsterdam", "Andorra la Vella", "Athens", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", 
+    "Bucharest", "Budapest", "Chisinau", "Copenhagen", "Dublin", "Helsinki", "Kyiv", "Lisbon", "Ljubljana", 
+    "London", "Luxembourg", "Madrid", "Minsk", "Monaco", "Moscow", "Nicosia", "Oslo", "Paris", "Podgorica", 
+    "Prague", "Reykjavik", "Riga", "Rome", "San Marino", "Sarajevo", "Skopje", "Sofia", "Stockholm", 
+    "Tallinn", "Tirana", "Vaduz", "Valletta", "Vienna", "Vilnius", "Warsaw", "Zagreb"
+]
+
+africa_capitals = [
+    "Abuja", "Accra", "Addis Ababa", "Algiers", "Antananarivo", "Asmara", "Bamako", "Bangui", "Banjul", 
+    "Bissau", "Brazzaville", "Cairo", "Conakry", "Dakar", "Djibouti", "Dodoma", "Freetown", "Gaborone", 
+    "Harare", "Juba", "Kampala", "Khartoum", "Kigali", "Kinshasa", "Libreville", "Lilongwe", "Lome", 
+    "Luanda", "Lusaka", "Malabo", "Maputo", "Maseru", "Mbabane", "Mogadishu", "Monrovia", "Moroni", 
+    "Nairobi", "Ndjamena", "Niamey", "Nouakchott", "Porto-Novo", "Praia", "Pretoria", "Rabat", 
+    "São Tomé", "Tripoli", "Tunis", "Victoria", "Windhoek", "Yamoussoukro"
+]
+
+
+asia_capitals = [
+    "Abu Dhabi", "Amman", "Ankara", "Ashgabat", "Astana", "Baghdad", "Baku", "Bangkok", "Beijing", 
+    "Beirut", "Bishkek", "Dhaka", "Dili", "Doha", "Damascus", "Hanoi", "Islamabad", "Jakarta", 
+    "Jerusalem", "Kabul", "Kathmandu", "Kuala Lumpur", "Kuwait City", "Manila", "Muscat", "Naypyidaw", 
+    "New Delhi", "Phnom Penh", "Pyongyang", "Riyadh", "Sana'a", "Seoul", "Singapore", "Sri Jayawardenepura Kotte", 
+    "Taipei", "Tashkent", "Tbilisi", "Tehran", "Thimphu", "Tokyo", "Ulaanbaatar", "Vientiane", "Yerevan"
+]
+
+north_america_capitals = [
+    "Basseterre", "Belmopan", "Bridgetown", "Castries", "Guatemala City", "Havana", "Kingston", "Kingstown", 
+    "Managua", "Mexico City", "Nassau", "Ottawa", "Panama City", "Port-au-Prince", "Port of Spain", 
+    "Roseau", "San Jose", "San Juan", "San Salvador", "Santo Domingo", "St. George's", "St. John's", 
+    "Tegucigalpa", "Washington, D.C."
+]
+
+
+south_america_capitals = [
+    "Asunción", "Bogotá", "Brasília", "Buenos Aires", "Caracas", "Cayenne", "Georgetown", "La Paz", 
+    "Lima", "Montevideo", "Paramaribo", "Quito", "Santiago", "Sucre"
+]
+
+
+
+oceania_capitals = [
+    "Apia", "Canberra", "Funafuti", "Honiara", "Majuro", "Ngerulmud", "Nukuʻalofa", "Palikir", 
+    "Port Moresby", "Port Vila", "Suva", "Tarawa", "Wellington"
+]
+
+
+
+
+print("Choose a continent. 1 - 6")
+print("================================")
+print("Europe[1]")
+print("Asia[2]")
+print("North America[3]")
+print("South America[4]")
+print("Africa[5]")
+print("Oceania[6]")
+print("================================")
+
+answer1 = input("Input: ")
+
+
+if answer1 == "1":
+    # Convert the list to a set for faster lookups and to track remaining answers
+    remaining_capitals = set(europe_capitals)
+    
+    while remaining_capitals:
+        answer = input("Input: ").strip()  # Get user input and remove extra spaces
+        
+        if answer in remaining_capitals:
+            print("Correct!")
+            remaining_capitals.remove(answer)  # Remove the correct answer from the set
+        else:
+            print("Wrong. Try again.")
+        
+        # Optional: Show how many capitals are left to guess
+        print(f"{len(remaining_capitals)} capitals remaining.")
+    
+    print("Congratulations! You've named all the European capitals.")
+
+if answer == "2":
+    remaining_capitals2 = set(asia_capitals)
+    
+    while remaining_capitals:
+        answer2 = input("Input: ").strip()  # Get user input and remove extra spaces
+        
+        if answer2 in remaining_capitals2:
+            print("Correct!")
+            remaining_capitals2.remove(answer2)  # Remove the correct answer from the set
+        else:
+            print("Wrong. Try again.")
+        
+        # Optional: Show how many capitals are left to guess
+        print(f"{len(remaining_capitals2)} capitals remaining.")
+    
+    print("Congratulations! You've named all the European capitals.")
+
+if answer == "3":
+    remaining_capitals3 = set(north_america_capitals)
+    
+    while remaining_capitals:
+        answer3 = input("Input: ").strip()  # Get user input and remove extra spaces
+        
+        if answer3 in remaining_capitals3:
+            print("Correct!")
+            remaining_capitals3.remove(answer3)  # Remove the correct answer from the set
+        else:
+            print("Wrong. Try again.")
+        
+        # Optional: Show how many capitals are left to guess
+        print(f"{len(remaining_capitals3)} capitals remaining.")
+    
+    print("Congratulations! You've named all the European capitals.")
+
+if answer == "4":
+    remaining_capitals4 = set(south_america_capitals)
+    
+    while remaining_capitals4:
+        answer4 = input("Input: ").strip()  # Get user input and remove extra spaces
+        
+        if answer4 in remaining_capitals4:
+            print("Correct!")
+            remaining_capitals4.remove(answer4)  # Remove the correct answer from the set
+        else:
+            print("Wrong. Try again.")
+        
+        # Optional: Show how many capitals are left to guess
+        print(f"{len(remaining_capitals4)} capitals remaining.")
+    
+    print("Congratulations! You've named all the European capitals.")
+    
+if answer == "5":
+    remaining_capitals5 = set(africa_capitals)
+    
+    while remaining_capitals:
+        answer5 = input("Input: ").strip()  # Get user input and remove extra spaces
+        
+        if answer5 in remaining_capitals5:
+            print("Correct!")
+            remaining_capitals5.remove(answer5)  # Remove the correct answer from the set
+        else:
+            print("Wrong. Try again.")
+        
+        # Optional: Show how many capitals are left to guess
+        print(f"{len(remaining_capitals5)} capitals remaining.")
+    
+    print("Congratulations! You've named all the European capitals.")
+
+if answer == "6":
+    remaining_capitals6 = set(oceania_capitals)
+    
+    while remaining_capitals6:
+        answer6 = input("Input: ").strip()  # Get user input and remove extra spaces
+        
+        if answer6 in remaining_capitals6:
+            print("Correct!")
+            remaining_capitals6.remove(answer6)  # Remove the correct answer from the set
+        else:
+            print("Wrong. Try again.")
+        
+        # Optional: Show how many capitals are left to guess
+        print(f"{len(remaining_capitals6)} capitals remaining.")
+    
+    print("Congratulations! You've named all the European capitals.")
