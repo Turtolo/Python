@@ -1,0 +1,25 @@
+# List of European capitals
+europe_capitals = [
+    "Amsterdam", "Andorra la Vella", "Athens", "Belgrade", "Berlin", "Bern", "Bratislava", "Brussels", 
+    "Bucharest", "Budapest", "Chisinau", "Copenhagen", "Dublin", "Helsinki", "Kyiv", "Lisbon", "Ljubljana", 
+    "London", "Luxembourg", "Madrid", "Minsk", "Monaco", "Moscow", "Nicosia", "Oslo", "Paris", "Podgorica", 
+    "Prague", "Reykjavik", "Riga", "Rome", "San Marino", "Sarajevo", "Skopje", "Sofia", "Stockholm", 
+    "Tallinn", "Tirana", "Vaduz", "Valletta", "Vienna", "Vilnius", "Warsaw", "Zagreb"
+]
+
+# Convert the list to a set for faster lookups and to track remaining answers
+remaining_capitals = set(europe_capitals)
+
+while remaining_capitals:
+    answer = input("Input: ").strip()  # Get user input and remove extra spaces
+    
+    if answer in remaining_capitals:
+        print("Correct!")
+        remaining_capitals.remove(answer)  # Remove the correct answer from the set
+    else:
+        print("Wrong. Try again.")
+    
+    # Optional: Show how many capitals are left to guess
+    print(f"{len(remaining_capitals)} capitals remaining.")
+
+print("Congratulations! You've named all the European capitals.")
