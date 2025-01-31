@@ -1,0 +1,68 @@
+#Regne hjelp
+
+
+print("Er det addisjon? y/n")
+
+answer1 = input("Input: ")
+
+
+if answer1 == "y":
+    print("Hva vil du regne ut?")
+    
+    ad_1_ans = input("1: ")
+    
+    ad_2_ans = input("2: ")
+    
+    ad_1_flo = float(ad_1_ans)
+    ad_2_flo = float(ad_2_ans)
+    
+    print("Svaret er: ", ad_1_flo + ad_2_flo)
+
+else:
+    print("Er det subraksjon? y/n")
+    answer2 = input("Input: ")
+    
+    if answer2 == "y":
+        
+        print("Hva vil du regne ut?")
+        
+        sub_1_ans = input("1: ")
+        sub_2_ans = input("2: ")
+        
+        sub_1_flo = float(sub_1_ans)
+        sub_2_flo = float(sub_2_ans)
+        
+        print("Svaret er: ", sub_1_flo - sub_2_flo)
+    else:
+        print("Er det multiplikasjon? y/n")
+        
+        answer3 = input("Input: ")
+        
+        if answer3 == "y":
+                
+            print("Hva vil du regne ut?")
+            
+            mul_1_ans = input("1: ")
+            mul_2_ans = input("2: ")
+            
+            mul_1_flo = float(mul_1_ans)
+            mul_2_flo = float(mul_2_ans)
+            
+            print("Svaret er: ", mul_1_flo * mul_2_flo)
+        else:
+            print("Da må det være divisjon da!")
+            print("Hva vil du regne ut?")
+            
+            div_1_ans = input("1: ")
+            div_2_ans = input("2: ")
+            
+            div_1_flo = float(div_1_ans)
+            div_2_flo = float(div_2_ans)
+            
+            print("Svaret er: ", div_1_flo / div_2_flo)
+
+
+
+
+
+
