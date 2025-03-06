@@ -1,0 +1,143 @@
+import tkinter as tk
+import random
+
+
+item1Bou = False
+item2Bou = False
+item3Bou = False
+
+count = 0
+
+pokemon_list = [
+   "Bulbasaur", "Ivysaur", "Venusaur", "Charmander", "Charmeleon", "Charizard",
+   "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod", "Butterfree",
+   "Weedle", "Kakuna", "Beedrill", "Pidgey", "Pidgeotto", "Pidgeot", "Rattata",
+   "Raticate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu", "Raichu",
+   "Sandshrew", "Sandslash", "Nidoran♀", "Nidorina", "Nidoqueen", "Nidoran♂",
+   "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix", "Ninetales",
+   "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom", "Vileplume",
+   "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio", "Meowth",
+   "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe", "Arcanine",
+   "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam", "Machop",
+   "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel", "Tentacool",
+   "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash", "Slowpoke",
+   "Slowbro", "Magnemite", "Magneton", "Farfetch'd", "Doduo", "Dodrio", "Seel",
+   "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter", "Gengar",
+   "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode", "Exeggcute",
+   "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung", "Koffing",
+   "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan", "Horsea",
+   "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime", "Scyther",
+   "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp", "Gyarados",
+   "Lapras"
+]
+
+pokemon_catch_list = [""]
+
+def generate_question():
+   global rnd1, rnd2, question, rig_ans, pokemon, pokemon_catch_list, count
+ 
+   rnd1 = random.randint(1, 20)
+   rnd2 = random.randint(20, 40)
+   question = f"{rnd1} + {rnd2}"
+   rig_ans = rnd1 + rnd2
+   question_label.config(text=question)
+   
+   count += 1
+        
+
+   if count == 2:
+       pokemon = "1/3"
+       pokemon_label.config(text=pokemon)
+    
+   if count == 3:
+       pokemon = "2/3"
+       pokemon_label.config(text=pokemon)
+
+   if count == 4:
+       pokemon = "3/3"
+       pokemon_label.config(text=pokemon)
+
+   if count == 5:
+        count = 0
+        pokemon = random.choice(pokemon_list)
+        pokemon_catch_list.append(pokemon)  
+        pokemon_label.config(text=pokemon)
+        
+
+   
+
+   #pokemon_catch.config(text=pokemon_catch_list)
+
+def answer():
+   try:
+       intans = int(e1.get())
+
+       if intans == rig_ans:
+           print(f"Correct! {rnd1} + {rnd2} = {rig_ans}")
+           generate_question()
+       else:
+           print("Wrong")
+   except ValueError:
+       print("Please enter a valid number.")
+
+   e1.delete(0, tk.END)
+
+def item1():
+   item1Bou = True
+
+def item2():
+   item2Bou = True
+
+def item3():
+   item3Bou = True
+
+
+master = tk.Tk()
+
+master.minsize(320, 250)
+
+master.title("Pokemath")
+
+space = tk.Label(master, text="    ")
+space.grid(row=2, column= 1)
+
+question_label = tk.Label(master, text="")
+question_label.grid(row=1, column=1)
+
+
+
+pokemon_label = tk.Label(master, text="")
+pokemon_label.grid(row=4, column=2, sticky=tk.W, pady=4)
+
+#pokemon_catch = tk.Label(master, text=pokemon_list)
+#pokemon_catch .grid(row=4, column=0, sticky=tk.W, pady=4)
+
+generate_question()
+
+
+
+tk.Label(master, text="----------------------").grid(row=0, column=1)
+tk.Label(master, text="Pokemon").grid(row=0, column=1)
+
+tk.Label(master, text="Answer: ").grid(row=2)
+e1 = tk.Entry(master)
+e1.grid(row=2, column=1)
+
+
+tk.Button(master, text='Quit', command=master.quit).grid(row=4, column=0, sticky=tk.W, pady=4)
+tk.Button(master, text='Answer', command=answer).grid(row=4, column=1, sticky=tk.W, pady=4)
+
+tk.Label(master, text="----------------------").grid(row=5, column=1)
+tk.Label(master, text="Shop").grid(row=5, column=1)
+
+
+tk.Button(master, text='Buy', command=item1).grid(row=6, column=0, sticky=tk.W, pady=4)
+tk.Label(master, text="Shiny Charm").grid(row=6, column=1, sticky=tk.W, pady=4)
+
+tk.Button(master, text='Buy', command=item2).grid(row=7, column=0, sticky=tk.W, pady=4)
+tk.Label(master, text="Legendary Lure").grid(row=7, column=1, sticky=tk.W, pady=4)
+
+tk.Button(master, text='Buy', command=item3).grid(row=8, column=0, sticky=tk.W, pady=4)
+tk.Label(master, text="Mythic Lure").grid(row=8, column=1, sticky=tk.W, pady=4)
+
+master.mainloop()
